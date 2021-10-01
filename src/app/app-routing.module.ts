@@ -1,20 +1,43 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+import { HomeComponent } from 'src/pages/home/home.component';
+import { LoginComponent } from 'src/pages/login/login.component';
+import { ServiciosComponent } from 'src/pages/servicios/servicios.component';
+import { PerfilComponent } from 'src/pages/perfil/perfil.component';
+import { RegistroComponent } from 'src/pages/registro/registro.component';
+
 const routes: Routes = [
-  {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
-  {
-    path: 'message/:id',
-    loadChildren: () => import('./view-message/view-message.module').then( m => m.ViewMessagePageModule)
-  },
   {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
   },
+
+  {
+    path : 'home',
+    component : HomeComponent
+  },
+
+  {
+    path : 'login',
+    component : LoginComponent
+  },
+
+  {
+    path : 'servicios',
+    component : ServiciosComponent
+  },
+
+  {
+    path : 'perfil',
+    component : PerfilComponent
+  },
+
+  {
+    path : 'registro',
+    component : RegistroComponent
+  }
 ];
 
 @NgModule({
