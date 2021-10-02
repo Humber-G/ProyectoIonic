@@ -12,9 +12,10 @@ import { LoginComponent } from 'src/pages/login/login.component';
 import { ServiciosComponent } from 'src/pages/servicios/servicios.component';
 import { PerfilComponent } from 'src/pages/perfil/perfil.component';
 import { RegistroComponent } from 'src/pages/registro/registro.component';
+import { ContactComponent } from 'src/pages/contacto/contacto.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, LoginComponent, ServiciosComponent, PerfilComponent, RegistroComponent],
+  declarations: [AppComponent, HomeComponent, LoginComponent, ServiciosComponent, PerfilComponent, RegistroComponent, ContactComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

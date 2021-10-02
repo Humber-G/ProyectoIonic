@@ -6,6 +6,7 @@ import { LoginComponent } from 'src/pages/login/login.component';
 import { ServiciosComponent } from 'src/pages/servicios/servicios.component';
 import { PerfilComponent } from 'src/pages/perfil/perfil.component';
 import { RegistroComponent } from 'src/pages/registro/registro.component';
+import { ContactComponent } from 'src/pages/contacto/contacto.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,11 @@ const routes: Routes = [
   {
     path : 'registro',
     component : RegistroComponent
+  },
+
+  {
+    path : "contacto",
+    component : ContactComponent
   }
 ];
 
