@@ -3,7 +3,6 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-
     <ion-buttons slot="end">
       <ion-back-button></ion-back-button>
     </ion-buttons>
@@ -11,19 +10,27 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen="true"> 
-
+<ion-content fullscreen="true">
   <ion-item-group>
     <ion-item-divider>
       <ion-avatar>
-        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+        <img
+          src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"
+        />
       </ion-avatar>
     </ion-item-divider>
-  
+
     <ion-item>
       <ion-label position="stacked">Stacked Label</ion-label>
       <ion-input></ion-input>
     </ion-item>
   </ion-item-group>
 
+  <ion-button
+    color="dark"
+    expand="block"
+    fill="outline"
+    [routerLink]="['/registro']"
+    >Crear Cuenta</ion-button
+  >
 </ion-content>

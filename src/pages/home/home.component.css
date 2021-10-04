@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .card-group {
   display: flex;
   justify-content: space-evenly;
@@ -8,3 +9,13 @@
 .card-title {
   color: black;
 }
+=======
+.a{
+    display: inline-flex; flex-wrap: wrap; flex-direction: row; justify-content: space-evenly;
+    
+}
+
+.d, .i{
+    max-width: 42%;
+}
+>>>>>>> sebastian
