@@ -1,0 +1,8 @@
+.a{
+    display: inline-flex; flex-wrap: wrap; flex-direction: row; justify-content: space-evenly;
+    
+}
+
+.d, .i{
+    max-width: 42%;
+}
