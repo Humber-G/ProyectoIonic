@@ -1,0 +1,14 @@
+.avatar-login {
+  display: flex;
+  justify-content: center !important;
+}
+
+.boton-login {
+  display: flex;
+  justify-content: center !important;
+}
+
+#texto-crear-cuenta {
+  text-align: center;
+  display: block;
+}

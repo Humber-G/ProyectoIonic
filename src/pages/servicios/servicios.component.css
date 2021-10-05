@@ -1,0 +1,13 @@
+.label-servicios-titulo {
+  text-align: center;
+  display: block;
+  font-size: large;
+}
+.card-text,
+.card-title {
+  color: black;
+}
+
+.card {
+  background-size: auto;
+}
