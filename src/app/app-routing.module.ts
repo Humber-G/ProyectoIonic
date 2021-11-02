@@ -7,6 +7,7 @@ import { ServiciosComponent } from 'src/pages/servicios/servicios.component';
 import { PerfilComponent } from 'src/pages/perfil/perfil.component';
 import { RegistroComponent } from 'src/pages/registro/registro.component';
 import { ContactComponent } from 'src/pages/contacto/contacto.component';
+import { CRUDComponent } from 'src/pages/crud/crud.component';
 
 const routes: Routes = [
   {
@@ -41,9 +42,17 @@ const routes: Routes = [
   },
 
   {
-    path : "contacto",
+    path : 'contacto',
     component : ContactComponent
+  },
+  {
+    path: 'crud',
+    loadChildren: () => import('./clientes/clientes.module').then(m => m.ClientesModule)
   }
+
+
+
+
 ];
 
 @NgModule({
