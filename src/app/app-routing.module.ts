@@ -10,13 +10,7 @@ import { ContactComponent } from 'src/pages/contacto/contacto.component';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-
-  {
-    path : 'home',
+    path : '',
     component : HomeComponent
   },
 
