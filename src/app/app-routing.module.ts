@@ -10,40 +10,40 @@ import { ContactComponent } from 'src/pages/contacto/contacto.component';
 
 const routes: Routes = [
   {
-    path : '',
-    component : HomeComponent
+    path: '',
+    component: HomeComponent,
   },
 
   {
-    path : 'login',
-    component : LoginComponent
+    path: 'login',
+    component: LoginComponent,
   },
 
   {
-    path : 'servicios',
-    component : ServiciosComponent
+    path: 'servicios',
+    component: ServiciosComponent,
   },
 
   {
-    path : 'perfil',
-    component : PerfilComponent
+    path: 'perfil/:id',
+    component: PerfilComponent,
   },
 
   {
-    path : 'registro',
-    component : RegistroComponent
+    path: 'registro',
+    component: RegistroComponent,
   },
 
   {
-    path : "contacto",
-    component : ContactComponent
-  }
+    path: 'contacto',
+    component: ContactComponent,
+  },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

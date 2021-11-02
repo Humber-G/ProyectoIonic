@@ -14,19 +14,35 @@
 <ion-content color="" fullscreen="true">
   <ion-item color="">
     <ion-label position="floating">Nombre</ion-label>
-    <ion-input [(ngModel)]="name" type="text" required></ion-input>
+    <ion-input [(ngModel)]="client.name" type="text" required></ion-input>
+  </ion-item>
+  <ion-item color="">
+    <ion-label position="floating">Apellido</ion-label>
+    <ion-input [(ngModel)]="client.lastName" type="text" required></ion-input>
   </ion-item>
   <ion-item color="">
     <ion-label position="floating">Email</ion-label>
-    <ion-input [(ngModel)]="email" type="text" required></ion-input>
+    <ion-input [(ngModel)]="client.email" type="text" required></ion-input>
   </ion-item>
   <ion-item color="">
     <ion-label position="floating">Edad</ion-label>
-    <ion-input [(ngModel)]="age" type="number" value=number min= "18" max="100" inputmode="numeric" ></ion-input>
+    <ion-input
+      [(ngModel)]="client.age"
+      type="number"
+      value="number"
+      min="0"
+      max="100"
+      inputmode="numeric"
+      required
+    ></ion-input>
   </ion-item>
   <ion-item color="">
     <ion-label position="floating">Contraseña</ion-label>
-    <ion-input [(ngModel)]="password" type="password" required></ion-input>
+    <ion-input
+      [(ngModel)]="client.password"
+      type="password"
+      required
+    ></ion-input>
   </ion-item>
   <ion-item color="">
     <ion-label position="floating">Confirmar Contraseña</ion-label>
@@ -38,7 +54,7 @@
     type="submit"
     expand="block"
     color="light"
-    (click)="onSubmit()"
+    (click)="sendSubmit()"
     color="success"
     >Crear cuenta</ion-button
   >
