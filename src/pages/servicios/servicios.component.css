@@ -11,3 +11,6 @@
 .card {
   background-size: auto;
 }
+ion-title {
+  text-align: center;
+}

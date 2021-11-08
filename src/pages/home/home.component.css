@@ -8,3 +8,6 @@
 .card-title {
   color: black;
 }
+ion-title {
+  text-align: center;
+}

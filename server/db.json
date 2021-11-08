@@ -1,4 +1,12 @@
 {
   "clientes": [
+    {
+      "name": "humberto",
+      "lastName": "guzman",
+      "email": "email@email.com",
+      "age": 22,
+      "password": "hola1234",
+      "id": 1
+    }
   ]
 }

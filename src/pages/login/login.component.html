@@ -1,9 +1,9 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
+    <ion-buttons slot="end">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-buttons slot="end">
+    <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title>Iniciar sesión</ion-title>
@@ -11,49 +11,59 @@
 </ion-header>
 
 <ion-content fullscreen="true">
-  <ion-item-group>
-    <div class="avatar-login mt-2 mb-2">
-      <ion-avatar>
-        <img
-          src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"
-        />
-      </ion-avatar>
-    </div>
-    <ion-item>
-      <ion-label position="stacked">Email:</ion-label>
-      <ion-input
-        placeholder="ejemplo@ejemplo.cl"
-        type="email"
-        required=""
-        autocomplete="on"
-      ></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="stacked">Contraseña:</ion-label>
-      <ion-input
-        placeholder="Contraseña"
-        type="password"
-        required=""
-      ></ion-input>
-    </ion-item>
-  </ion-item-group>
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <ion-item-group>
+      <div class="avatar-login mt-2 mb-2">
+        <ion-avatar>
+          <img
+            src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"
+          />
+        </ion-avatar>
+      </div>
+      <ion-item>
+        <ion-label position="stacked">Email:</ion-label>
+        <ion-input
+          placeholder="ejemplo@ejemplo.cl"
+          type="email"
+          required=""
+          autocomplete="on"
+          formControlName="email"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Contraseña:</ion-label>
+        <ion-input
+          placeholder="CoNtRaSeÑa1234"
+          type="password"
+          required=""
+          formControlName="password"
+        ></ion-input>
+      </ion-item>
+    </ion-item-group>
 
-  <div class="mt-2 boton-login">
+    <div class="mt-2 boton-login">
+      <ion-button type="submit" color="success" expand="block" fill="outline"
+        >Iniciar sesion</ion-button
+      >
+    </div>
+
+    <ion-label id="texto-crear-cuenta"
+      >¿No tienes una cuenta? Sumate!!</ion-label
+    >
+
     <ion-button
-      color="success"
+      color="dark"
       expand="block"
       fill="outline"
-      >Iniciar sesion</ion-button
+      [routerLink]="['/registro']"
+      >Crear Cuenta</ion-button
     >
-  </div>
-
-  <ion-label id="texto-crear-cuenta">¿No tienes una cuenta? Sumate!!</ion-label>
-
-  <ion-button
-    color="dark"
-    expand="block"
-    fill="outline"
-    [routerLink]="['/registro']"
-    >Crear Cuenta</ion-button
-  >
+  </form>
 </ion-content>
+
+<!--Footer-->
+<ion-footer translucent="true">
+  <ion-toolbar>
+    <ion-title>Footer</ion-title>
+  </ion-toolbar>
+</ion-footer>

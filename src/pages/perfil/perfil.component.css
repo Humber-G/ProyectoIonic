@@ -1,6 +1,8 @@
-.a{
-    display: flex;
-    justify-content: center;
-    max-height: fit-content;
+.a {
+  display: flex;
+  justify-content: center;
+  max-height: fit-content;
 }
-
+ion-title {
+  text-align: center;
+}
