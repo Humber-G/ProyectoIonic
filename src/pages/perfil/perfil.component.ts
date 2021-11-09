@@ -1,11 +1,14 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
-    selector : 'perfil-component',
-    templateUrl : './perfil.component.html',
-    styleUrls : ['./perfil.component.css']
+  selector: 'perfil-component',
+  templateUrl: './perfil.component.html',
+  styleUrls: ['./perfil.component.css'],
 })
+export class PerfilComponent implements OnInit {
+  constructor(private client: HttpClient) {}
 
-export class PerfilComponent{
-    
+  private url: string = 'http://localhost:3000/clientes';
+  ngOnInit() {}
 }
