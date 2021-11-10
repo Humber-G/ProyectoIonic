@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
         if (user) {
           alert('Bienvenido');
           this.loginForm.reset();
-          this.router.navigate(['']);
+          this.router.navigate(['perfil/' + user.id]);
         } else {
           alert('Usuario no Encontrado');
         }
