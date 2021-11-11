@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+
+// export var idClient: number;
 @Component({
   selector: 'login-component',
   templateUrl: './login.component.html',
@@ -24,6 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   private url: string = 'http://localhost:3000/clientes';
+
   login() {
     this.client.get<any>(this.url).subscribe(
       (response) => {
@@ -37,6 +40,7 @@ export class LoginComponent implements OnInit {
           alert('Bienvenido');
           this.loginForm.reset();
           this.router.navigate(['perfil/' + user.id]);
+          // idClient = user.id;
         } else {
           alert('Usuario no Encontrado');
         }
