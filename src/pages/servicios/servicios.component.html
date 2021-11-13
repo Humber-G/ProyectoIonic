@@ -85,125 +85,23 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-
-  <!--Cards 1-->
-  <ion-label class="label-servicios-titulo mt-2"> Categoria 1 </ion-label>
-  <div class="card-group mt-2">
-    <div class="card">
-      <img
-        src="http://cdn3.upsocl.com/wp-content/uploads/2017/12/h4.jpg"
-        class="card-img-top"
-        alt="..."
-      />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          This is a wider card with supporting text below as a natural lead-in
-          to additional content. This content is a little bit longer.
-        </p>
-        <p class="card-text">
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </p>
-      </div>
-    </div>
-    <div class="card">
-      <img
-        src="https://www.lavanguardia.com/files/article_main_microformat/files/fp/uploads/2021/06/03/60b8b649ecea1.r_d.377-370-0.jpeg"
-        class="card-img-top"
-        alt="..."
-      />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          This card has supporting text below as a natural lead-in to additional
-          content.
-        </p>
-        <p class="card-text">
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </p>
-      </div>
-    </div>
-    <div class="card">
-      <img
-        src="https://www.lavanguardia.com/files/article_main_microformat/files/fp/uploads/2021/06/03/60b8b649ecea1.r_d.377-370-0.jpeg"
-        class="card-img-top"
-        alt="..."
-      />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          This is a wider card with supporting text below as a natural lead-in
-          to additional content. This card has even longer content than the
-          first to show that equal height action.
-        </p>
-        <p class="card-text">
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </p>
+  <div class="row">
+    <div class="column">
+      <div class="card" *ngFor="let corte of cortes">
+        <img [src]="corte.img" class="card-img-top" />
+        <div class="card-body">
+          <h1>Nombre: {{ corte.name }}</h1>
+          <h6>Costo: {{ corte.price }}</h6>
+          <h6>Tiempo: {{ corte.time }}</h6>
+        </div>
       </div>
     </div>
   </div>
-
-  <!--Cards 1-->
-  <ion-label class="label-servicios-titulo mt-2"> Categoria 2 </ion-label>
-  <div class="card-group mt-2">
-    <div class="card">
-      <img
-        src="http://cdn3.upsocl.com/wp-content/uploads/2017/12/h4.jpg"
-        class="card-img-top"
-        alt="..."
-      />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          This is a wider card with supporting text below as a natural lead-in
-          to additional content. This content is a little bit longer.
-        </p>
-        <p class="card-text">
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </p>
-      </div>
-    </div>
-    <div class="card">
-      <img
-        src="https://www.lavanguardia.com/files/article_main_microformat/files/fp/uploads/2021/06/03/60b8b649ecea1.r_d.377-370-0.jpeg"
-        class="card-img-top"
-        alt="..."
-      />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          This card has supporting text below as a natural lead-in to additional
-          content.
-        </p>
-        <p class="card-text">
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </p>
-      </div>
-    </div>
-    <div class="card">
-      <img
-        src="https://www.lavanguardia.com/files/article_main_microformat/files/fp/uploads/2021/06/03/60b8b649ecea1.r_d.377-370-0.jpeg"
-        class="card-img-top"
-        alt="..."
-      />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          This is a wider card with supporting text below as a natural lead-in
-          to additional content. This card has even longer content than the
-          first to show that equal height action.
-        </p>
-        <p class="card-text">
-          <small class="text-muted">Last updated 3 mins ago</small>
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!--Footer-->
-  <ion-footer translucent="true">
-    <ion-toolbar>
-      <ion-title>Footer</ion-title>
-    </ion-toolbar>
-  </ion-footer>
 </ion-content>
+
+<!--Footer-->
+<ion-footer translucent="true">
+  <ion-toolbar>
+    <ion-title>Footer</ion-title>
+  </ion-toolbar>
+</ion-footer>
