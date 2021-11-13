@@ -100,4 +100,6 @@ export class PerfilComponent implements OnInit {
       })
       .then((alert) => alert.present());
   }
+
+  patchClient() {}
 }

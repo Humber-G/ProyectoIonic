@@ -11,97 +11,29 @@
   </ion-toolbar>
 </ion-header>
 
+<!--Cards-->
 <ion-content fullscreen="true">
-  <!--Carrusel-->
-  <ion-label class="label-servicios-titulo mt-2 mb-2">
-    Servicios destacados
-  </ion-label>
-  <div
-    id="carouselExampleIndicators"
-    class="carousel slide"
-    data-bs-ride="carousel"
-  >
-    <div class="carousel-indicators">
-      <button
-        type="button"
-        data-bs-target="#carouselExampleIndicators"
-        data-bs-slide-to="0"
-        class="active"
-        aria-current="true"
-        aria-label="Slide 1"
-      ></button>
-      <button
-        type="button"
-        data-bs-target="#carouselExampleIndicators"
-        data-bs-slide-to="1"
-        aria-label="Slide 2"
-      ></button>
-      <button
-        type="button"
-        data-bs-target="#carouselExampleIndicators"
-        data-bs-slide-to="2"
-        aria-label="Slide 3"
-      ></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img
-          src="https://www.futbolred.com/files/article_main/files/crop/uploads/2021/03/30/60630b4745def.r_1617103694159.0-0-1200-600.jpeg"
-          class="d-block w-100"
-          alt="..."
-        />
-      </div>
-      <div class="carousel-item">
-        <img
-          src="https://www.futbolred.com/files/article_main/files/crop/uploads/2021/03/30/60630b4745def.r_1617103694159.0-0-1200-600.jpeg"
-          class="d-block w-100"
-          alt="..."
-        />
-      </div>
-      <div class="carousel-item">
-        <img
-          src="https://www.futbolred.com/files/article_main/files/crop/uploads/2021/03/30/60630b4745def.r_1617103694159.0-0-1200-600.jpeg"
-          class="d-block w-100"
-          alt="..."
-        />
-      </div>
-    </div>
-    <button
-      class="carousel-control-prev"
-      type="button"
-      data-bs-target="#carouselExampleIndicators"
-      data-bs-slide="prev"
-    >
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button
-      class="carousel-control-next"
-      type="button"
-      data-bs-target="#carouselExampleIndicators"
-      data-bs-slide="next"
-    >
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
   <div class="row">
     <div class="column">
-      <div class="card" *ngFor="let corte of cortes">
+      <div class="card mt-2" *ngFor="let corte of cortes">
         <img [src]="corte.img" class="card-img-top" />
         <div class="card-body">
-          <h1>Nombre: {{ corte.name }}</h1>
-          <h6>Costo: {{ corte.price }}</h6>
-          <h6>Tiempo: {{ corte.time }}</h6>
+          <h5 class="card-title">{{ corte.name }}</h5>
+          <h6 class="card-text">
+            This is a wider card with supporting text below as a natural lead-in
+            to additional content. This content is a little bit longer.
+          </h6>
+          <div class="precio-tiempo">
+            <p class="card-text">
+              <big>Valor: ${{ corte.price }}</big>
+            </p>
+            <p class="card-text">
+              <small class="text-muted">Tiempo: {{ corte.time }}</small>
+            </p>
+          </div>
+          <ion-button color="primary" expand="block">Agendar</ion-button>
         </div>
       </div>
     </div>
   </div>
 </ion-content>
-
-<!--Footer-->
-<ion-footer translucent="true">
-  <ion-toolbar>
-    <ion-title>Footer</ion-title>
-  </ion-toolbar>
-</ion-footer>

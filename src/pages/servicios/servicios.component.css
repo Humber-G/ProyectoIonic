@@ -42,6 +42,15 @@ body {
   background-color: transparent;
 }
 
+.precio-tiempo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
 /* Responsive columns - one column layout (vertical) on small screens */
 @media screen and (max-width: 600px) {
   .column {
