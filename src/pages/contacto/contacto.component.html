@@ -14,58 +14,16 @@
 <ion-content fullscreen="true">
   <div class="row">
     <div class="column">
-      <div class="card">
+      <div class="card" *ngFor="let worker of workers">
         <img
           src="https://i.pinimg.com/564x/d9/56/9b/d9569bbed4393e2ceb1af7ba64fdf86a.jpg"
           class="card-img-top"
           alt="..."
         />
         <div class="card-body">
-          <h1>Nombre</h1>
-          <h6>Email</h6>
-          <h6>Telefono</h6>
-        </div>
-      </div>
-    </div>
-    <div class="column">
-      <div class="card">
-        <img
-          src="https://i.pinimg.com/564x/d9/56/9b/d9569bbed4393e2ceb1af7ba64fdf86a.jpg"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="card-body">
-          <h1>Nombre</h1>
-          <h6>Email</h6>
-          <h6>Telefono</h6>
-        </div>
-      </div>
-    </div>
-    <div class="column">
-      <div class="card">
-        <img
-          src="https://i.pinimg.com/564x/d9/56/9b/d9569bbed4393e2ceb1af7ba64fdf86a.jpg"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="card-body">
-          <h1>Nombre</h1>
-          <h6>Email</h6>
-          <h6>Telefono</h6>
-        </div>
-      </div>
-    </div>
-    <div class="column">
-      <div class="card">
-        <img
-          src="https://i.pinimg.com/564x/d9/56/9b/d9569bbed4393e2ceb1af7ba64fdf86a.jpg"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="card-body">
-          <h1>Nombre</h1>
-          <h6>Email</h6>
-          <h6>Telefono</h6>
+          <h1>Nombre: {{ worker.name }} {{ worker.lastName }}</h1>
+          <h6>Email: {{ worker.email }}</h6>
+          <h6>Telefono: {{ worker.phone }}</h6>
         </div>
       </div>
     </div>

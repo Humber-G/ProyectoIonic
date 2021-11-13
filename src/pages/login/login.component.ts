@@ -42,11 +42,17 @@ export class LoginComponent implements OnInit {
             .create({
               header: 'Inicio de sesión exitoso',
               message: 'Bienvenido mi king, Pase nomas con confianza.',
-              buttons: ['OK'],
+              buttons: [
+                {
+                  text: 'Dele mi rey',
+                  handler: () => {
+                    this.router.navigate(['perfil/' + user.id]);
+                  },
+                },
+              ],
             })
             .then((alert) => alert.present());
           this.loginForm.reset();
-          this.router.navigate(['perfil/' + user.id]);
         } else {
           this.alertCtrl
             .create({

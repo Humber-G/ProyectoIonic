@@ -1,22 +1,38 @@
 {
   "clientes": [
     {
-      "name": "humberto",
-      "lastName": "guzman",
+      "name": "Humberto",
+      "lastName": "Guzman",
       "email": "email@email.com",
       "age": 22,
       "password": "hola1234",
       "id": 1
+    },
+    {
+      "name": "naxoweco",
+      "lastName": "aguante el bulla",
+      "email": "email@email.com",
+      "age": 22,
+      "password": "1234",
+      "id": 2
     }
   ],
   "personal": [
     {
-      "id":1,
-      "phone":56912345678,
-      "name":"Tomas",
-      "lastName":"avendaño",
-      "email":"email@email.com",
-      "password":"1234"
+      "id": 1,
+      "phone": 56912345678,
+      "name": "Tomas",
+      "lastName": "Avendaño",
+      "email": "email@email.com",
+      "password": "1234"
+    },
+    {
+      "id": 2,
+      "phone": 56912345678,
+      "name": "Compare",
+      "lastName": "Loco",
+      "email": "email@email.com",
+      "password": "1234"
     }
   ]
 }
