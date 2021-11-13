@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="danger">
     <ion-buttons slot="end">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -24,7 +24,7 @@
         <h6>Email: {{ email }}</h6>
         <h6>Edad: {{ edad }} años</h6>
       </div>
-      <ion-button color="primary" (click)="patchCient()">
+      <ion-button color="primary" (click)="updateClient()">
         <ion-icon name="build-outline"></ion-icon>
       </ion-button>
       <ion-button color="danger" (click)="deleteClient()">

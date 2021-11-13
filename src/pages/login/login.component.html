@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="success">
     <ion-buttons slot="end">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -45,11 +45,7 @@
           </ion-item-group>
 
           <div class="mt-2 boton-login">
-            <ion-button
-              type="submit"
-              color="success"
-              expand="block"
-              fill="outline"
+            <ion-button type="submit" color="success" expand="block"
               >Iniciar sesion</ion-button
             >
           </div>
@@ -59,9 +55,8 @@
           >
 
           <ion-button
-            color="dark"
+            color="warning"
             expand="block"
-            fill="outline"
             [routerLink]="['/registro']"
             >Crear Cuenta</ion-button
           >

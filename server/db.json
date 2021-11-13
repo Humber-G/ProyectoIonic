@@ -4,9 +4,9 @@
       "name": "Humberto",
       "lastName": "Guzman",
       "email": "email@email.com",
-      "age": 22,
-      "password": "hola1234",
-      "id": 1
+      "age": "22",
+      "id": 1,
+      "password": "1234"
     }
   ],
   "personal": [
