@@ -7,58 +7,43 @@ import { ServiciosComponent } from 'src/pages/servicios/servicios.component';
 import { PerfilComponent } from 'src/pages/perfil/perfil.component';
 import { RegistroComponent } from 'src/pages/registro/registro.component';
 import { ContactComponent } from 'src/pages/contacto/contacto.component';
-import { CRUDComponent } from 'src/pages/crud/crud.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    component: HomeComponent,
   },
 
   {
-    path : 'home',
-    component : HomeComponent
+    path: 'login',
+    component: LoginComponent,
   },
 
   {
-    path : 'login',
-    component : LoginComponent
+    path: 'servicios',
+    component: ServiciosComponent,
   },
 
   {
-    path : 'servicios',
-    component : ServiciosComponent
+    path: 'perfil/:id',
+    component: PerfilComponent,
   },
 
   {
-    path : 'perfil',
-    component : PerfilComponent
+    path: 'registro',
+    component: RegistroComponent,
   },
 
   {
-    path : 'registro',
-    component : RegistroComponent
+    path: 'contacto',
+    component: ContactComponent,
   },
-
-  {
-    path : 'contacto',
-    component : ContactComponent
-  },
-  {
-    path: 'crud',
-    loadChildren: () => import('./clientes/clientes.module').then(m => m.ClientesModule)
-  }
-
-
-
-
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

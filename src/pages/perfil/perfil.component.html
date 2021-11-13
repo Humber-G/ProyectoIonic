@@ -1,13 +1,39 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
+    <ion-buttons slot="end">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
 
-    <ion-buttons slot="end">
+    <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title>Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 
+<ion-content>
+  <div class="column">
+    <div class="card">
+      <img
+        src="https://i.pinimg.com/564x/d9/56/9b/d9569bbed4393e2ceb1af7ba64fdf86a.jpg"
+        class="card-img-top"
+        alt="..."
+      />
+      <div class="card-body">
+        <h1>Nombre: {{ nombre }} {{ apellido }}</h1>
+        <h6>Email: {{ email }}</h6>
+        <h6>Edad: {{ edad }}</h6>
+      </div>
+    </div>
+    <ion-button color="danger" (click)="deleteClient()">
+      <ion-icon name="trash-outline"></ion-icon>
+    </ion-button>
+  </div>
+</ion-content>
+
+<!--Footer-->
+<ion-footer translucent="true">
+  <ion-toolbar>
+    <ion-title>Footer</ion-title>
+  </ion-toolbar>
+</ion-footer>

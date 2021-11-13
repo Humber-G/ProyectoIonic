@@ -1,5 +1,5 @@
 <ion-app>
-  <ion-menu side="start" menuId="first" contentId="main">
+  <ion-menu side="end" menuId="first" contentId="main">
     <ion-header>
       <ion-toolbar color="primary">
         <ion-title>Menu</ion-title>
@@ -8,47 +8,42 @@
     <ion-content>
       <ion-list>
         <ion-menu-toggle>
-        <ion-item [routerLink]="['/home']">
-          <ion-icon name="home"></ion-icon>
-          <ion-label>Inicio</ion-label>
-        </ion-item>
-      </ion-menu-toggle>
+          <ion-item [routerLink]="['']">
+            <ion-icon name="home" slot="end"></ion-icon>
+            <ion-label>Inicio</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
 
-      <ion-menu-toggle>
-        <ion-item [routerLink]="['/servicios']">
-          <ion-icon name="cut"></ion-icon>
-          <ion-label>Servicios</ion-label>
-        </ion-item>
-      </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item [routerLink]="['/servicios']">
+            <ion-icon name="cut" slot="end"></ion-icon>
+            <ion-label>Servicios</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
 
-      <ion-menu-toggle>
-        <ion-item [routerLink]="['/contacto']">
-          <ion-icon name="call"></ion-icon>
-          <ion-label>Contacto</ion-label>
-        </ion-item>
-      </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item [routerLink]="['/contacto']">
+            <ion-icon name="call" slot="end"></ion-icon>
+            <ion-label>Contacto</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
 
-      <ion-menu-toggle>
-        <ion-item [routerLink]="['/perfil']">
-          <ion-icon name="person-circle"></ion-icon>
-          <ion-label>Perfil</ion-label>
-        </ion-item>
-      </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item [routerLink]="['/perfil/1']">
+            <!--Ojito con el ID-->
+            <ion-icon name="person-circle" slot="end"></ion-icon>
+            <ion-label>Perfil</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
 
-      <ion-menu-toggle>
-        <ion-item [routerLink]="['/login']">
-          <ion-icon name="log-in"></ion-icon>
-          <ion-label>Ingresar</ion-label>
-        </ion-item>
-      </ion-menu-toggle>
-      <ion-menu-toggle>
-        <ion-item [routerLink]="['/crud']">
-          <ion-icon name="folder-open-outline"></ion-icon>
-            <ion-label>CRUD</ion-label>
-        </ion-item>
-      </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item [routerLink]="['/login']">
+            <ion-icon name="log-in" slot="end"></ion-icon>
+            <ion-label>Ingresar</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
       </ion-list>
     </ion-content>
   </ion-menu>
-  <ion-router-outlet id="main"></ion-router-outlet>
+  <ion-router-outlet id="main"> </ion-router-outlet>
 </ion-app>

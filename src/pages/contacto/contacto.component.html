@@ -1,13 +1,38 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
+    <ion-buttons slot="end">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
 
-    <ion-buttons slot="end">
+    <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Contactanos!!</ion-title>
+    <ion-title>Contactanos</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content color="warning" fullscreen="true"> </ion-content>
+
+<ion-content fullscreen="true">
+  <div class="row">
+    <div class="column">
+      <div class="card" *ngFor="let worker of workers">
+        <img
+          src="https://i.pinimg.com/564x/d9/56/9b/d9569bbed4393e2ceb1af7ba64fdf86a.jpg"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h1>Nombre: {{ worker.name }} {{ worker.lastName }}</h1>
+          <h6>Email: {{ worker.email }}</h6>
+          <h6>Telefono: {{ worker.phone }}</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<!--Footer-->
+<ion-footer translucent="true">
+  <ion-toolbar>
+    <ion-title>Footer</ion-title>
+  </ion-toolbar>
+</ion-footer>

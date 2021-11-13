@@ -1,0 +1,54 @@
+{
+  "clientes": [
+    {
+      "name": "Humberto",
+      "lastName": "Guzman",
+      "email": "email@email.com",
+      "age": 22,
+      "password": "hola1234",
+      "id": 1
+    },
+    {
+      "name": "naxoweco",
+      "lastName": "aguante el bulla",
+      "email": "email@email.com",
+      "age": 22,
+      "password": "1234",
+      "id": 2
+    }
+  ],
+  "personal": [
+    {
+      "id": 1,
+      "phone": 56912345678,
+      "name": "Tomas",
+      "lastName": "Avendaño",
+      "email": "email@email.com",
+      "password": "1234"
+    },
+    {
+      "id": 2,
+      "phone": 56912345678,
+      "name": "Compare",
+      "lastName": "Loco",
+      "email": "email@email.com",
+      "password": "1234"
+    }
+  ],
+  "cuts": [
+    {
+      "id": 1,
+      "name": "Degradado",
+      "price": "$12000",
+      "time": "2hrs, aprox.",
+      "img": "https://cortesdepelohombres.com/wp-content/uploads/2019/12/Corte-de-pelo-con-barba-y-degradado.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Rapado",
+      "price": "$15000",
+      "time": "3hrs, aprox.",
+      "img": "https://ath2.unileverservices.com/wp-content/uploads/sites/13/2020/10/23194014/rapado-hombre-4.jpg"
+    }
+  ]
+}

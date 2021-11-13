@@ -1,7 +1,8 @@
 {
   "name": "Peluqueria",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }
