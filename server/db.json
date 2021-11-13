@@ -4,9 +4,9 @@
       "name": "Humberto",
       "lastName": "Guzman",
       "email": "email@email.com",
-      "age": 22,
-      "password": "hola1234",
-      "id": 1
+      "age": "22",
+      "id": 1,
+      "password": "1234"
     }
   ],
   "personal": [
@@ -31,14 +31,14 @@
     {
       "id": 1,
       "name": "Degradado",
-      "price": "$12000",
+      "price": "12000",
       "time": "2hrs, aprox.",
       "img": "https://cortesdepelohombres.com/wp-content/uploads/2019/12/Corte-de-pelo-con-barba-y-degradado.jpg"
     },
     {
       "id": 2,
       "name": "Rapado",
-      "price": "$15000",
+      "price": "15000",
       "time": "3hrs, aprox.",
       "img": "https://ath2.unileverservices.com/wp-content/uploads/sites/13/2020/10/23194014/rapado-hombre-4.jpg"
     }

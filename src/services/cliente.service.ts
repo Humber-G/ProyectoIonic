@@ -39,4 +39,16 @@ export class ClienteService {
       })
     );
   }
+
+  // public updateClient(newData: IClient): Observable<IClient> {
+  //   return this.httpClient.patch<IClient>(this.url, JSON.stringify(newData), {
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //   });
+  // }
+
+  public updateClient(id: number, newData: IClient) {
+    return this.httpClient.patch(this.url + '/' + id, newData);
+  }
 }

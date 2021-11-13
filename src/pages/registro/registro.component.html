@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="success">
     <ion-buttons slot="end">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -11,13 +11,13 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content color="" fullscreen="true">
+<ion-content fullscreen="true">
   <div class="row">
     <div class="col-md-6">
       <div class="card">
         <div class="text-center">
           <h1>Registro</h1>
-          <h6>Por favor ingresa tus datos</h6>
+          <h4>Por favor ingresa tus datos.</h4>
         </div>
         <ion-item color="transparent">
           <ion-label position="floating">Nombre</ion-label>
@@ -44,7 +44,6 @@
           <ion-input
             [(ngModel)]="client.age"
             type="number"
-            value="number"
             min="0"
             max="100"
             inputmode="numeric"
@@ -74,16 +73,10 @@
           expand="block"
           color="light"
           (click)="sendSubmit()"
-          color="success"
+          color="warning"
           >Crear cuenta</ion-button
         >
       </div>
     </div>
   </div>
 </ion-content>
-<!--Footer-->
-<ion-footer translucent="true">
-  <ion-toolbar>
-    <ion-title>Footer</ion-title>
-  </ion-toolbar>
-</ion-footer>

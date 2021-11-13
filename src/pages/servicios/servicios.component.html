@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="success">
     <ion-buttons slot="end">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -11,7 +11,9 @@
   </ion-toolbar>
 </ion-header>
 
+<!--Cards-->
 <ion-content fullscreen="true">
+<<<<<<< HEAD
   <!--Carrusel-->
   <ion-label class="label-servicios-titulo mt-2 mb-2">
     Servicios destacados
@@ -93,11 +95,33 @@
           <h1>Nombre: {{ corte.name }}</h1>
           <h6>Costo: {{ corte.price }}</h6>
           <h6>Tiempo: {{ corte.time }}</h6>
+=======
+  <div class="row">
+    <div class="column">
+      <div class="card mt-2" *ngFor="let corte of cortes">
+        <img [src]="corte.img" class="card-img-top" />
+        <div class="card-body">
+          <h5 class="card-title">{{ corte.name }}</h5>
+          <h6 class="card-text">
+            This is a wider card with supporting text below as a natural lead-in
+            to additional content. This content is a little bit longer.
+          </h6>
+          <div class="precio-tiempo">
+            <p class="card-text">
+              <big>Valor: ${{ corte.price }}</big>
+            </p>
+            <p class="card-text">
+              <small class="text-muted">Tiempo: {{ corte.time }}</small>
+            </p>
+          </div>
+          <ion-button color="primary" expand="block">Agendar</ion-button>
+>>>>>>> humberto
         </div>
       </div>
     </div>
   </div>
 </ion-content>
+<<<<<<< HEAD
 
 <!--Footer-->
 <ion-footer translucent="true">
@@ -105,3 +129,5 @@
     <ion-title>Footer</ion-title>
   </ion-toolbar>
 </ion-footer>
+=======
+>>>>>>> humberto
