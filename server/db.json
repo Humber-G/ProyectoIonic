@@ -8,5 +8,15 @@
       "password": "hola1234",
       "id": 1
     }
+  ],
+  "personal": [
+    {
+      "id":1,
+      "phone":56912345678,
+      "name":"Tomas",
+      "lastName":"avendaño",
+      "email":"email@email.com",
+      "password":"1234"
+    }
   ]
 }

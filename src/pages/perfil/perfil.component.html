@@ -22,9 +22,12 @@
       <div class="card-body">
         <h1>Nombre: {{ nombre }} {{ apellido }}</h1>
         <h6>Email: {{ email }}</h6>
-        <h6>edad: {{ edad }}</h6>
+        <h6>Edad: {{ edad }}</h6>
       </div>
     </div>
+    <ion-button color="danger" (click)="deleteClient()">
+      <ion-icon name="trash-outline"></ion-icon>
+    </ion-button>
   </div>
 </ion-content>
 

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// import { idClient } from 'src/pages/login/login.component';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   constructor() {}
-  // private id: number;
 
-  ngOnInit() {
-    // this.id == idClient;
-  }
+  ngOnInit() {}
 }

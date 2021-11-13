@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
-// export var idClient: number;
 @Component({
   selector: 'login-component',
   templateUrl: './login.component.html',
@@ -15,7 +15,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private client: HttpClient,
-    private router: Router
+    private router: Router,
+    private alertCtrl: AlertController
   ) {}
 
   ngOnInit() {
@@ -37,12 +38,24 @@ export class LoginComponent implements OnInit {
           );
         });
         if (user) {
-          alert('Bienvenido');
+          this.alertCtrl
+            .create({
+              header: 'Inicio de sesión exitoso',
+              message: 'Bienvenido mi king, Pase nomas con confianza.',
+              buttons: ['OK'],
+            })
+            .then((alert) => alert.present());
           this.loginForm.reset();
           this.router.navigate(['perfil/' + user.id]);
-          // idClient = user.id;
         } else {
-          alert('Usuario no Encontrado');
+          this.alertCtrl
+            .create({
+              header: 'Algo salio mal mi rey',
+              message: 'Datos Incompletos O Erroneos, Pal Lobby',
+              buttons: ['OK'],
+            })
+            .then((alert) => alert.present());
+          this.loginForm.reset();
         }
       },
       (err) => {

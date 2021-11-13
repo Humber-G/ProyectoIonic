@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ClienteService } from 'src/services/cliente.service';
 import { IClient } from 'src/services/ICliente';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'registro-component',
@@ -20,7 +21,11 @@ export class RegistroComponent implements OnInit {
   public c_password: '';
 
   private clientService: ClienteService;
-  constructor(service: ClienteService, private router: Router) {
+  constructor(
+    service: ClienteService,
+    private router: Router,
+    private alertCtrl: AlertController
+  ) {
     this.clientService = service;
   }
   private status: boolean = false;
@@ -29,11 +34,21 @@ export class RegistroComponent implements OnInit {
       this.clientService.addClient(this.client).subscribe((response) => {
         console.log(response);
       });
-      alert('Registrado Exitosamente');
+      this.alertCtrl.create({
+        header: 'Bienvenido mi king',
+        message: 'Registrado Exitosamente',
+        buttons: ['OK'],
+      });
 
       this.status = true;
     } else {
-      alert('Error Ingresa tus datos nuevamente');
+      this.alertCtrl
+        .create({
+          header: 'Algo salio mal mi rey',
+          message: 'Datos Incompletos O Erroneos, Pal Lobby',
+          buttons: ['OK'],
+        })
+        .then((alert) => alert.present());
       this.status = false;
 
       this.client.name = '';
