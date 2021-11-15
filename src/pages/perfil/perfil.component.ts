@@ -18,7 +18,7 @@ export class PerfilComponent implements OnInit {
     private service: ClienteService
   ) {}
 
-  private url: string = 'http://localhost:3000/clientes';
+  private url: string = 'http://192.168.101.7:3000/clientes';
   public selectedClient: IClient;
 
   selectedId: number;

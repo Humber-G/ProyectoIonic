@@ -10,7 +10,7 @@ import { AlertController } from '@ionic/angular';
 export class ServiciosComponent implements OnInit {
   constructor(private client: HttpClient, private alertCtrl: AlertController) {}
 
-  private url: string = 'http://localhost:3000/cuts';
+  private url: string = 'http://192.168.101.7:3000/cuts';
 
   name: string;
   price: string;

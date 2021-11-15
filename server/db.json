@@ -7,6 +7,14 @@
       "age": "22",
       "id": 1,
       "password": "1234"
+    },
+    {
+      "name": "Julio",
+      "lastName": "Herrera",
+      "email": "ju.herrera@mail.com",
+      "age": "29",
+      "password": "1234",
+      "id": 2
     }
   ],
   "personal": [
