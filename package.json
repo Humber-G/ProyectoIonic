@@ -10,8 +10,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "android":"ionic cordova emulate android -lc",
-    "jserver":"json-server --host 192.168.101.7 --watch db.json"
+    "android": "ionic cordova emulate android -lc"
   },
   "private": true,
   "dependencies": {
