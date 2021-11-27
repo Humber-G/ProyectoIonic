@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { ModalController } from '@ionic/angular';
 import { BehaviorSubject } from 'rxjs';
@@ -12,6 +12,7 @@ import { CartModalComponent } from 'src/pages/cart-modal/cart-modal.component';
   styleUrls: ['./servicios.component.css'],
 })
 export class ServiciosComponent implements OnInit {
+  @ViewChild('cart', { static: false, read: ElementRef }) fab: ElementRef;
   constructor(
     private client: HttpClient,
     private alertCtrl: AlertController,
@@ -57,14 +58,36 @@ export class ServiciosComponent implements OnInit {
   }
 
   addToCart(product) {
+    this.animateCSS('tada');
     this.cartService.addProduct(product);
   }
 
   async openCart() {
+    this.animateCSS('bounceOuteLeft', true);
     let modal = await this.modalCtrl.create({
       component: CartModalComponent,
       cssClass: 'cart-modal',
     });
+
+    modal.onWillDismiss().then(() => {
+      this.fab.nativeElement.classList.remove('animated', 'bounceOutLeft');
+      this.animateCSS('bounceInLeft');
+    });
+
     modal.present();
+  }
+
+  animateCSS(animationName, keepAnimated = false) {
+    const node = this.fab.nativeElement;
+    node.classList.add('animated', animationName);
+
+    //https://github.com/daneden/animate.css
+    function handleAnimationEnd() {
+      if (!keepAnimated) {
+        node.classList.remove('animated', animationName);
+      }
+      node.removeEventListener('animationend', handleAnimationEnd);
+    }
+    node.addEventListener('animationend', handleAnimationEnd);
   }
 }
