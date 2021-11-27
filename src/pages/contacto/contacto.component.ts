@@ -10,7 +10,7 @@ import { AlertController } from '@ionic/angular';
 export class ContactComponent implements OnInit {
   constructor(private client: HttpClient, private alertCtrl: AlertController) {}
 
-  private url: string = 'http://192.168.101.7:3000/personal';
+  private url: string = 'http://192.168.101.6:3000/personal';
 
   nombre: string;
   apellido: string;

@@ -7,13 +7,13 @@ ion-title {
   padding: 12px;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .card-img-top {
   height: 450px;
   width: 450px;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 body {
@@ -22,8 +22,8 @@ body {
 
 /* Float four columns side by side */
 .column {
-  float: left;
-  width: 25%;
+  float: none;
+  width: 100%;
   padding: 0 10px;
 }
 
@@ -45,6 +45,10 @@ body {
   padding: 16px;
   text-align: center;
   background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .precio-tiempo {
@@ -62,5 +66,19 @@ body {
     width: 100%;
     display: block;
     margin-bottom: 20px;
+  }
+  .card-img-top {
+    height: 450px;
+    width: 450px;
+  }
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 16px;
+    text-align: center;
+    background-color: transparent;
+  }
+  .carousel {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 12px;
   }
 }

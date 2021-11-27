@@ -18,7 +18,7 @@ export class PerfilComponent implements OnInit {
     private service: ClienteService
   ) {}
 
-  private url: string = 'http://192.168.101.7:3000/clientes';
+  private url: string = 'http://192.168.101.6:3000/clientes';
   public selectedClient: IClient;
 
   selectedId: number;
@@ -110,20 +110,20 @@ export class PerfilComponent implements OnInit {
         inputs: [
           {
             name: 'name',
-            placeholder: 'Nombre:',
+            placeholder: 'Nombre: ' + this.nombre,
           },
           {
             name: 'lastName',
-            placeholder: 'Apellido:',
+            placeholder: 'Apellido: ' + this.apellido,
           },
           {
             name: 'email',
-            placeholder: 'Email:',
+            placeholder: 'Email: ' + this.email,
             type: 'email',
           },
           {
             name: 'age',
-            placeholder: 'Edad:',
+            placeholder: 'Edad: ' + this.edad,
             min: 0,
             max: 100,
             type: 'number',

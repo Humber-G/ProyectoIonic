@@ -10,11 +10,12 @@ import { AlertController } from '@ionic/angular';
 export class HomeComponent implements OnInit {
   constructor(private client: HttpClient, private alertCtrl: AlertController) {}
 
-  private url: string = 'http://192.168.101.7:3000/cuts';
+  private url: string = 'http://192.168.101.6:3000/cuts';
 
   name: string;
   price: string;
   time: string;
+  description: string;
   cortes: [];
   ngOnInit() {
     this.client.get<any>(this.url).subscribe((response) => {

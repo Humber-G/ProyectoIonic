@@ -51,6 +51,22 @@ body {
   align-items: baseline;
 }
 
+/*Carro*/
+.cart-icon {
+  font-size: 40px;
+}
+
+.cart-length {
+  color: var(--ion-color-primary);
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  font-weight: 600;
+  font-size: 1em;
+  min-width: 25px;
+  z-index: 10;
+}
+
 /* Responsive columns - one column layout (vertical) on small screens */
 @media screen and (max-width: 600px) {
   .column {
