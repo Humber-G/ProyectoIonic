@@ -44,6 +44,19 @@ export class CartService {
     this.cartItemCount.next(this.cartItemCount.value + 1);
   }
 
+  decreaseProduct(product) {
+    for (let [index, p] of this.cart.entries()) {
+      if (p.id == product.id) {
+        p.amount -= 1;
+
+        if (p.amount == 0) {
+          this.cart.splice(index, 1);
+        }
+      }
+    }
+    this.cartItemCount.next(this.cartItemCount.value - 1);
+  }
+
   removeProduct(product) {
     for (let [index, p] of this.cart.entries()) {
       if (p.id === product.id) {

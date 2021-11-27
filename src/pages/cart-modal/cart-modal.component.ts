@@ -24,6 +24,10 @@ export class CartModalComponent implements OnInit {
     this.cartService.addProduct(product);
   }
 
+  decreaseCartItem(product) {
+    this.cartService.decreaseProduct(product);
+  }
+
   removeCartItem(product) {
     this.cartService.removeProduct(product);
   }

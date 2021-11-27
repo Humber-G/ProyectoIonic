@@ -39,7 +39,7 @@
     {
       "id": 1,
       "name": "Degradado",
-      "price": "12000",
+      "price": 12000,
       "amount":1,
       "time": "2hrs, aprox.",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur reiciendis aliquam quod maxime, incidunt ipsam nulla nesciunt debitis dicta sint!",
@@ -48,7 +48,7 @@
     {
       "id": 2,
       "name": "Rapado",
-      "price": "15000",
+      "price": 15000,
       "amount":1,
       "time": "3hrs, aprox.",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur reiciendis aliquam quod maxime, incidunt ipsam nulla nesciunt debitis dicta sint!",
