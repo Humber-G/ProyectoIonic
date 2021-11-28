@@ -18,7 +18,7 @@ export class PerfilComponent implements OnInit {
     private service: ClienteService
   ) {}
 
-  private url: string = 'http://localhost:3000/clientes';
+  private url: string = 'http://192.168.101.6:3000/clientes';
   public selectedClient: IClient;
 
   selectedId: number;
@@ -26,6 +26,7 @@ export class PerfilComponent implements OnInit {
   apellido: string;
   email: string;
   edad: number;
+  private password: string;
 
   ngOnInit() {
     this.route.paramMap.subscribe((params) => {
@@ -41,6 +42,7 @@ export class PerfilComponent implements OnInit {
             this.apellido = user.lastName;
             this.email = user.email;
             this.edad = user.age;
+            this.password = user.password;
           } else {
             this.alertCtrl
               .create({
@@ -53,7 +55,7 @@ export class PerfilComponent implements OnInit {
           }
         },
         (err) => {
-          alert('ERROR');
+          alert(err);
         }
       );
     });
@@ -94,6 +96,98 @@ export class PerfilComponent implements OnInit {
                     .then((alert) => alert.present());
                 }
               });
+            },
+          },
+        ],
+      })
+      .then((alert) => alert.present());
+  }
+
+  updateClient() {
+    this.alertCtrl
+      .create({
+        header: 'Modificar datos',
+        inputs: [
+          {
+            name: 'name',
+            placeholder: 'Nombre: ' + this.nombre,
+          },
+          {
+            name: 'lastName',
+            placeholder: 'Apellido: ' + this.apellido,
+          },
+          {
+            name: 'email',
+            placeholder: 'Email: ' + this.email,
+            type: 'email',
+          },
+          {
+            name: 'age',
+            placeholder: 'Edad: ' + this.edad,
+            min: 0,
+            max: 100,
+            type: 'number',
+          },
+          {
+            name: 'password',
+            placeholder: 'Contraseña:',
+            type: 'password',
+          },
+        ],
+        buttons: [
+          {
+            text: 'Cancelar',
+            role: 'cancel',
+            handler: () => {},
+          },
+          {
+            text: 'Confirmar',
+            handler: (res) => {
+              //Validaciones para realizar el patch sin dejar campos en blanco
+
+              if (res.name == '') {
+                res.name = this.nombre;
+              } else {
+                res.name;
+              }
+
+              if (res.lastName == '') {
+                res.lastName = this.apellido;
+              } else {
+                res.lastName;
+              }
+
+              if (res.email == '') {
+                res.email = this.email;
+              } else {
+                res.email;
+              }
+
+              if (!res.age) {
+                res.age = this.edad;
+              } else {
+                res.age;
+              }
+
+              if (res.password == '') {
+                res.password = this.password;
+              } else {
+                res.password;
+              }
+
+              var newData: IClient = {
+                name: res.name,
+                lastName: res.lastName,
+                email: res.email,
+                age: res.age,
+                password: res.password,
+              };
+
+              this.service
+                .updateClient(this.selectedId, newData)
+                .subscribe((response) => {
+                  window.location.reload();
+                });
             },
           },
         ],

@@ -16,6 +16,7 @@ import { PerfilComponent } from 'src/pages/perfil/perfil.component';
 import { RegistroComponent } from 'src/pages/registro/registro.component';
 import { ContactComponent } from 'src/pages/contacto/contacto.component';
 import { ClienteService } from '../services/cliente.service';
+import { CartModalComponent } from 'src/pages/cart-modal/cart-modal.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ClienteService } from '../services/cliente.service';
     PerfilComponent,
     RegistroComponent,
     ContactComponent,
+    CartModalComponent,
   ],
   entryComponents: [],
   imports: [

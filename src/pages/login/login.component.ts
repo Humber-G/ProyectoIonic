@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  private url: string = 'http://localhost:3000/clientes';
+  private url: string = 'http://192.168.101.6:3000/clientes';
 
   login() {
     this.client.get<any>(this.url).subscribe(

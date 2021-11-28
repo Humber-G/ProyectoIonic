@@ -2,17 +2,17 @@
   "clientes": [
     {
       "name": "Humberto",
-      "lastName": "Guzman",
+      "lastName": "Guzmán",
       "email": "email@email.com",
-      "age": 22,
-      "password": "hola1234",
-      "id": 1
+      "age": "22",
+      "id": 1,
+      "password": "1234"
     },
     {
-      "name": "naxoweco",
-      "lastName": "aguante el bulla",
-      "email": "email@email.com",
-      "age": 22,
+      "name": "Julio",
+      "lastName": "Herrera",
+      "email": "ju.herrera@mail.com",
+      "age": "29",
       "password": "1234",
       "id": 2
     }
@@ -39,15 +39,19 @@
     {
       "id": 1,
       "name": "Degradado",
-      "price": "$12000",
+      "price": 12000,
+      "amount":1,
       "time": "2hrs, aprox.",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur reiciendis aliquam quod maxime, incidunt ipsam nulla nesciunt debitis dicta sint!",
       "img": "https://cortesdepelohombres.com/wp-content/uploads/2019/12/Corte-de-pelo-con-barba-y-degradado.jpg"
     },
     {
       "id": 2,
       "name": "Rapado",
-      "price": "$15000",
+      "price": 15000,
+      "amount":1,
       "time": "3hrs, aprox.",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur reiciendis aliquam quod maxime, incidunt ipsam nulla nesciunt debitis dicta sint!",
       "img": "https://ath2.unileverservices.com/wp-content/uploads/sites/13/2020/10/23194014/rapado-hombre-4.jpg"
     }
   ]

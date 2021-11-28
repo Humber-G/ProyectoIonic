@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="danger">
     <ion-buttons slot="end">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -20,20 +20,16 @@
         alt="..."
       />
       <div class="card-body">
-        <h1>Nombre: {{ nombre }} {{ apellido }}</h1>
+        <h1>{{ nombre }} {{ apellido }}</h1>
         <h6>Email: {{ email }}</h6>
-        <h6>Edad: {{ edad }}</h6>
+        <h6>Edad: {{ edad }} años</h6>
       </div>
+      <ion-button color="primary" (click)="updateClient()">
+        <ion-icon name="build-outline"></ion-icon>
+      </ion-button>
+      <ion-button color="danger" (click)="deleteClient()">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
     </div>
-    <ion-button color="danger" (click)="deleteClient()">
-      <ion-icon name="trash-outline"></ion-icon>
-    </ion-button>
   </div>
 </ion-content>
-
-<!--Footer-->
-<ion-footer translucent="true">
-  <ion-toolbar>
-    <ion-title>Footer</ion-title>
-  </ion-toolbar>
-</ion-footer>
