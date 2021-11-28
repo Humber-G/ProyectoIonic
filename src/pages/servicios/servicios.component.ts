@@ -19,9 +19,9 @@ export class ServiciosComponent implements OnInit {
     private alertCtrl: AlertController,
     private cartService: CartService,
     private modalCtrl: ModalController
-  ) {}
+  ) { }
 
-  private url: string = 'http://192.168.101.6:3000/cuts';
+  private url: string = 'http://localhost:3000/cuts';
   cart = [];
   products = null;
   cartItemCount: BehaviorSubject<number>;
@@ -49,7 +49,7 @@ export class ServiciosComponent implements OnInit {
     //carro
 
     //getProducts
-    this.products = this.cartService.getProducts().subscribe((todos) => {});
+    this.products = this.cartService.getProducts().subscribe((todos) => { });
 
     //getCart
     this.cart = this.cartService.getCart();

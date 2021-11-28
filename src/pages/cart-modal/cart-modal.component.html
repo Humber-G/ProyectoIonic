@@ -23,12 +23,17 @@
           <ion-row class="ion-align-items-center">
             <!--Reducir Cantidad-->
             <ion-col size="2" class="ion-align-self-center">
+<<<<<<< HEAD
               <ion-button
                 color="medium"
                 fill="clear"
                 (click)="decreaseCartItem(p)"
               >
                 <ion-icon name="remove-circle" slot="icon-only"></ion-icon>
+=======
+              <ion-button color="medium" fill="clear" (click)="increaseCartItem(p)">
+                <ion-icon name="add-circle" slot="icon-only"></ion-icon>
+>>>>>>> Test
               </ion-button>
             </ion-col>
             <!--Cantidad-->
@@ -47,11 +52,7 @@
             </ion-col>
 
             <ion-col size="2" offset="5">
-              <ion-button
-                color="medium"
-                fill="clear"
-                (click)="removeCartItem(p)"
-              >
+              <ion-button color="medium" fill="clear" (click)="removeCartItem(p)">
                 <ion-icon name="close-circle" slot="icon-only"></ion-icon>
               </ion-button>
             </ion-col>
