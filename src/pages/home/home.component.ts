@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'home-component',
@@ -9,7 +8,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private client: HttpClient, private alertCtrl: AlertController) { }
+  constructor(private client: HttpClient, private alertCtrl: AlertController) {}
 
   private url: string = 'http://localhost:3000/cuts';
 
@@ -33,14 +32,5 @@ export class HomeComponent implements OnInit {
       }
       console.error();
     });
-  }
-
-  testclick() {
-    Swal.fire({
-      icon: 'success',
-      title: 'Alerta wena',
-      showConfirmButton: false,
-      timer: 1000
-    })
   }
 }

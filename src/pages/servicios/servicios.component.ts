@@ -5,6 +5,7 @@ import { ModalController } from '@ionic/angular';
 import { BehaviorSubject } from 'rxjs';
 import { CartService } from 'src/services/cart.service';
 import { CartModalComponent } from 'src/pages/cart-modal/cart-modal.component';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'servicios-component',
@@ -19,7 +20,7 @@ export class ServiciosComponent implements OnInit {
     private alertCtrl: AlertController,
     private cartService: CartService,
     private modalCtrl: ModalController
-  ) { }
+  ) {}
 
   private url: string = 'http://localhost:3000/cuts';
   cart = [];
@@ -49,7 +50,7 @@ export class ServiciosComponent implements OnInit {
     //carro
 
     //getProducts
-    this.products = this.cartService.getProducts().subscribe((todos) => { });
+    this.products = this.cartService.getProducts().subscribe((todos) => {});
 
     //getCart
     this.cart = this.cartService.getCart();
@@ -93,5 +94,14 @@ export class ServiciosComponent implements OnInit {
       node.removeEventListener('animationend', handleAnimationEnd);
     }
     node.addEventListener('animationend', handleAnimationEnd);
+  }
+
+  testclick() {
+    Swal.fire({
+      icon: 'success',
+      title: 'Servicio agendado',
+      showConfirmButton: false,
+      timer: 1000,
+    });
   }
 }
