@@ -17,6 +17,9 @@ import { RegistroComponent } from 'src/pages/registro/registro.component';
 import { ContactComponent } from 'src/pages/contacto/contacto.component';
 import { ClienteService } from '../services/cliente.service';
 import { CartModalComponent } from 'src/pages/cart-modal/cart-modal.component';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+
+
 
 @NgModule({
   declarations: [
@@ -37,6 +40,7 @@ import { CartModalComponent } from 'src/pages/cart-modal/cart-modal.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    SweetAlert2Module
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
@@ -44,4 +48,4 @@ import { CartModalComponent } from 'src/pages/cart-modal/cart-modal.component';
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

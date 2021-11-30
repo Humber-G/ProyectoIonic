@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { CartService } from 'src/services/cart.service';
 import { IProducto } from 'src/services/IProducto';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cart-modal',
@@ -14,7 +15,7 @@ export class CartModalComponent implements OnInit {
   constructor(
     private cartService: CartService,
     private modalCtrl: ModalController
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.cart = this.cartService.getCart();
@@ -36,5 +37,13 @@ export class CartModalComponent implements OnInit {
     this.modalCtrl.dismiss();
   }
 
-  checkout() {}
+  checkout() {
+    Swal.fire({
+      icon: 'success',
+      title: "Wena Alerta Compare",
+      showConfirmButton: false,
+      timer: 1500
+    }),
+      this.cartService.blankCart();
+  }
 }
