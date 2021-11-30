@@ -22,7 +22,7 @@ export class ServiciosComponent implements OnInit {
     private modalCtrl: ModalController
   ) {}
 
-  private url: string = 'http://localhost:3000/cuts';
+  private url: string = 'http://54.227.209.116:3000/cuts';
   cart = [];
   products = null;
   cartItemCount: BehaviorSubject<number>;

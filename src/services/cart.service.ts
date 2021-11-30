@@ -7,7 +7,7 @@ import { IProducto } from 'src/services/IProducto';
   providedIn: 'root',
 })
 export class CartService {
-  private url: string = 'http://localhost:3000/cuts';
+  private url: string = 'http://54.227.209.116:3000/cuts';
   private httpClient: HttpClient;
   private cart = [];
   private cartItemCount = new BehaviorSubject(0);
@@ -68,8 +68,10 @@ export class CartService {
   }
   blankCart() {
     for (let [index, p] of this.cart.entries()) {
-      this.cartItemCount.next(this.cartItemCount.value - this.cartItemCount.value)
-      this.cart.splice(index, 1)
+      this.cartItemCount.next(
+        this.cartItemCount.value - this.cartItemCount.value
+      );
+      this.cart.splice(index, 1);
     }
   }
 }

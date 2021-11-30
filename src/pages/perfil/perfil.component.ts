@@ -16,9 +16,9 @@ export class PerfilComponent implements OnInit {
     private route: ActivatedRoute,
     private alertCtrl: AlertController,
     private service: ClienteService
-  ) { }
+  ) {}
 
-  private url: string = 'http://localhost:3000/clientes';
+  private url: string = 'http://54.227.209.116:3000/clientes';
   public selectedClient: IClient;
 
   selectedId: number;
@@ -71,7 +71,7 @@ export class PerfilComponent implements OnInit {
           {
             text: 'Cancelar',
             role: 'cancel',
-            handler: () => { },
+            handler: () => {},
           },
           {
             text: 'Confirmar',
@@ -83,7 +83,7 @@ export class PerfilComponent implements OnInit {
                 if (user) {
                   this.service
                     .deleteClient(this.selectedId)
-                    .subscribe((response) => { });
+                    .subscribe((response) => {});
                   window.location.reload();
                 } else {
                   this.alertCtrl
@@ -138,7 +138,7 @@ export class PerfilComponent implements OnInit {
           {
             text: 'Cancelar',
             role: 'cancel',
-            handler: () => { },
+            handler: () => {},
           },
           {
             text: 'Confirmar',

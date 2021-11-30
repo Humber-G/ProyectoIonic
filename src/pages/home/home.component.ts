@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
 export class HomeComponent implements OnInit {
   constructor(private client: HttpClient, private alertCtrl: AlertController) {}
 
-  private url: string = 'http://localhost:3000/cuts';
+  private url: string = 'http://54.227.209.116:3000/cuts';
 
   name: string;
   price: string;

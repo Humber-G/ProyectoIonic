@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
     private client: HttpClient,
     private router: Router,
     private alertCtrl: AlertController
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  private url: string = 'http://localhost:3000/clientes';
+  private url: string = 'http://54.227.209.116:3000/clientes';
 
   login() {
     this.client.get<any>(this.url).subscribe(
