@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'home-component',
@@ -32,5 +33,14 @@ export class HomeComponent implements OnInit {
       }
       console.error();
     });
+  }
+
+  testclick() {
+    Swal.fire({
+      icon: 'success',
+      title: 'Alerta wena',
+      showConfirmButton: false,
+      timer: 1000
+    })
   }
 }
