@@ -66,4 +66,10 @@ export class CartService {
       }
     }
   }
+  blankCart() {
+    for (let [index, p] of this.cart.entries()) {
+      this.cartItemCount.next(this.cartItemCount.value - this.cartItemCount.value)
+      this.cart.splice(index, 1)
+    }
+  }
 }
