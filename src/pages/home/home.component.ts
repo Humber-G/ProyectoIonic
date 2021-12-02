@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'home-component',
@@ -10,11 +11,12 @@ import { AlertController } from '@ionic/angular';
 export class HomeComponent implements OnInit {
   constructor(private client: HttpClient, private alertCtrl: AlertController) {}
 
-  private url: string = 'http://localhost:3000/cuts';
+  private url: string = 'http://54.227.209.116:3000/cuts';
 
   name: string;
   price: string;
   time: string;
+  description: string;
   cortes: [];
   ngOnInit() {
     this.client.get<any>(this.url).subscribe((response) => {
@@ -29,6 +31,7 @@ export class HomeComponent implements OnInit {
           })
           .then((alert) => alert.present());
       }
+      console.error();
     });
   }
 }

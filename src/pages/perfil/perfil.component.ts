@@ -18,7 +18,7 @@ export class PerfilComponent implements OnInit {
     private service: ClienteService
   ) {}
 
-  private url: string = 'http://localhost:3000/clientes';
+  private url: string = 'http://54.227.209.116:3000/clientes';
   public selectedClient: IClient;
 
   selectedId: number;
@@ -83,8 +83,9 @@ export class PerfilComponent implements OnInit {
                 if (user) {
                   this.service
                     .deleteClient(this.selectedId)
-                    .subscribe((response) => {});
-                  window.location.reload();
+                    .subscribe((response) => {
+                      window.location.reload();
+                    });
                 } else {
                   this.alertCtrl
                     .create({
@@ -110,20 +111,20 @@ export class PerfilComponent implements OnInit {
         inputs: [
           {
             name: 'name',
-            placeholder: 'Nombre:',
+            placeholder: 'Nombre: ' + this.nombre,
           },
           {
             name: 'lastName',
-            placeholder: 'Apellido:',
+            placeholder: 'Apellido: ' + this.apellido,
           },
           {
             name: 'email',
-            placeholder: 'Email:',
+            placeholder: 'Email: ' + this.email,
             type: 'email',
           },
           {
             name: 'age',
-            placeholder: 'Edad:',
+            placeholder: 'Edad: ' + this.edad,
             min: 0,
             max: 100,
             type: 'number',

@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class PersonalService {
-  private url: string = 'http://localhost:3000/personal';
+  private url: string = 'http://54.227.209.116:3000/personal';
   private httpClient: HttpClient;
   constructor(client: HttpClient) {
     this.httpClient = client;

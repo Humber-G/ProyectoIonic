@@ -1,6 +1,11 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
+import { BehaviorSubject } from 'rxjs';
+import { CartService } from 'src/services/cart.service';
+import { CartModalComponent } from 'src/pages/cart-modal/cart-modal.component';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'servicios-component',
@@ -8,9 +13,19 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./servicios.component.css'],
 })
 export class ServiciosComponent implements OnInit {
-  constructor(private client: HttpClient, private alertCtrl: AlertController) {}
+  @ViewChild('cart', { static: false, read: ElementRef }) fab: ElementRef;
 
-  private url: string = 'http://localhost:3000/cuts';
+  constructor(
+    private client: HttpClient,
+    private alertCtrl: AlertController,
+    private cartService: CartService,
+    private modalCtrl: ModalController
+  ) {}
+
+  private url: string = 'http://54.227.209.116:3000/cuts';
+  cart = [];
+  products = null;
+  cartItemCount: BehaviorSubject<number>;
 
   name: string;
   price: string;
@@ -30,6 +45,63 @@ export class ServiciosComponent implements OnInit {
           })
           .then((alert) => alert.present());
       }
+    });
+
+    //carro
+
+    //getProducts
+    this.products = this.cartService.getProducts().subscribe((todos) => {});
+
+    //getCart
+    this.cart = this.cartService.getCart();
+
+    //getCount
+    this.cartItemCount = this.cartService.getCartItemCount();
+  }
+
+  addToCart(product) {
+    this.animateCSS('animate__tada');
+    this.cartService.addProduct(product);
+  }
+
+  async openCart() {
+    this.animateCSS('animate__bounceOutLeft', true);
+    let modal = await this.modalCtrl.create({
+      component: CartModalComponent,
+      cssClass: 'cart-modal',
+    });
+
+    modal.onWillDismiss().then(() => {
+      this.fab.nativeElement.classList.remove(
+        'animate__animated',
+        'animate__bounceOutLeft'
+      );
+      this.animateCSS('animate__bounceInLeft');
+    });
+
+    modal.present();
+  }
+
+  animateCSS(animationName, keepAnimated = false) {
+    const node = this.fab.nativeElement;
+    node.classList.add('animate__animated', animationName);
+
+    //https://github.com/daneden/animate.css
+    function handleAnimationEnd() {
+      if (!keepAnimated) {
+        node.classList.remove('animate__animated', animationName);
+      }
+      node.removeEventListener('animationend', handleAnimationEnd);
+    }
+    node.addEventListener('animationend', handleAnimationEnd);
+  }
+
+  testclick() {
+    Swal.fire({
+      icon: 'success',
+      title: 'Servicio agendado',
+      showConfirmButton: false,
+      timer: 1000,
     });
   }
 }

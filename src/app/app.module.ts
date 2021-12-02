@@ -16,6 +16,9 @@ import { PerfilComponent } from 'src/pages/perfil/perfil.component';
 import { RegistroComponent } from 'src/pages/registro/registro.component';
 import { ContactComponent } from 'src/pages/contacto/contacto.component';
 import { ClienteService } from '../services/cliente.service';
+import { CartModalComponent } from 'src/pages/cart-modal/cart-modal.component';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import Swal from 'sweetalert2';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,7 @@ import { ClienteService } from '../services/cliente.service';
     PerfilComponent,
     RegistroComponent,
     ContactComponent,
+    CartModalComponent,
   ],
   entryComponents: [],
   imports: [
@@ -35,6 +39,7 @@ import { ClienteService } from '../services/cliente.service';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    SweetAlert2Module.forRoot(),
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
@@ -42,4 +47,4 @@ import { ClienteService } from '../services/cliente.service';
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

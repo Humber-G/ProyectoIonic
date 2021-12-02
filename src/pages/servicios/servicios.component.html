@@ -13,6 +13,12 @@
 
 <!--Cards-->
 <ion-content fullscreen="true">
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="openCart()" #cart>
+      <div class="cart-length">{{ cartItemCount | async }}</div>
+      <ion-icon name="cart" class="cart-icon"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
   <div class="row">
     <div class="column">
       <div class="card mt-2" *ngFor="let corte of cortes">
@@ -25,13 +31,18 @@
           </h6>
           <div class="precio-tiempo">
             <p class="card-text">
-              <big>Valor: ${{ corte.price }}</big>
+              <big
+                >Valor:
+                {{ corte.price | currency: "CLP":"symbol-narrow":"5.0" }}</big
+              >
             </p>
             <p class="card-text">
               <small class="text-muted">Tiempo: {{ corte.time }}</small>
             </p>
           </div>
-          <ion-button color="primary" expand="block">Agendar</ion-button>
+          <ion-button color="success" expand="block" (click)="addToCart(corte)"
+            >Agendar</ion-button
+          >
         </div>
       </div>
     </div>
