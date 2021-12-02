@@ -15,7 +15,7 @@ export class CartModalComponent implements OnInit {
   constructor(
     private cartService: CartService,
     private modalCtrl: ModalController
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.cart = this.cartService.getCart();
@@ -44,9 +44,9 @@ export class CartModalComponent implements OnInit {
   checkout() {
     Swal.fire({
       icon: 'success',
-      title: "Wena Alerta Compare",
+      title: 'Servicio Agendado',
       showConfirmButton: false,
-      timer: 1500
+      timer: 1500,
     }),
       this.cartService.blankCart();
   }
