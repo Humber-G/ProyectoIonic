@@ -95,13 +95,4 @@ export class ServiciosComponent implements OnInit {
     }
     node.addEventListener('animationend', handleAnimationEnd);
   }
-
-  testclick() {
-    Swal.fire({
-      icon: 'success',
-      title: 'Servicio agendado',
-      showConfirmButton: false,
-      timer: 1000,
-    });
-  }
 }
