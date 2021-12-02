@@ -83,8 +83,9 @@ export class PerfilComponent implements OnInit {
                 if (user) {
                   this.service
                     .deleteClient(this.selectedId)
-                    .subscribe((response) => {});
-                  window.location.reload();
+                    .subscribe((response) => {
+                      window.location.reload();
+                    });
                 } else {
                   this.alertCtrl
                     .create({
