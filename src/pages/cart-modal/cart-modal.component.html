@@ -58,7 +58,44 @@
           </ion-row>
         </ion-grid>
       </ion-item>
-      <!--Segundo item-->
+      <!--Segundo Item-->
+      <ion-item>
+        <ion-grid>
+          <!--Fecha-->
+          <ion-row>
+            <ion-col size="4">Dia para agendar: </ion-col>
+            <ion-col class="ion-text-end">
+              <ion-datetime
+                [(ngModel)]="compra.fechaSeleccionada"
+                display-timezone="UTC"
+                min="2021-12"
+                max="2022-01"
+                [dayShortNames]="customDayShortNames"
+                displayFormat="DDD DD / MMM / YY"
+                monthShortNames="Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic"
+              ></ion-datetime>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <!--Tercer item-->
+      <ion-item>
+        <ion-grid>
+          <!--Hora-->
+          <ion-row>
+            <ion-col size="4">Hora: </ion-col>
+            <ion-col class="ion-text-end">
+              <ion-datetime
+                [(ngModel)]="compra.hora"
+                displayFormat="H:mm A"
+                minuteValues="0,15,30,45"
+                hourValues="10,11,12,13,14,15,16,17,18,19,20"
+              ></ion-datetime>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <!--Cuarto item-->
       <ion-item>
         <ion-grid>
           <ion-row>

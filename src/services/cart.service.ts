@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { IProducto } from 'src/services/IProducto';
+import { ICompra } from './ICompra';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
   private url: string = 'http://54.227.209.116:3000/cuts';
+  private urlOrden: string = 'http://54.227.209.116:3000/orden';
   private httpClient: HttpClient;
   private cart = [];
   private cartItemCount = new BehaviorSubject(0);
@@ -67,11 +69,23 @@ export class CartService {
     }
   }
   blankCart() {
-    for (let [index, p] of this.cart.entries()) {
+    for (let [index] of this.cart.entries()) {
       this.cartItemCount.next(
         this.cartItemCount.value - this.cartItemCount.value
       );
-      this.cart.splice(index, 1);
+      this.cart.splice(index);
     }
   }
+
+  // sendOrder(newOrder: ICompra): Observable<ICompra> {
+  //   return this.httpClient.post<ICompra>(
+  //     this.urlOrden,
+  //     JSON.stringify(newOrder),
+  //     {
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //     }
+  //   );
+  // }
 }
