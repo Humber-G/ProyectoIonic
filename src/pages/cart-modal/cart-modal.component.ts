@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { CartService } from 'src/services/cart.service';
+import { ICompra } from 'src/services/ICompra';
 import { IProducto } from 'src/services/IProducto';
 import Swal from 'sweetalert2';
 
@@ -11,6 +12,15 @@ import Swal from 'sweetalert2';
 })
 export class CartModalComponent implements OnInit {
   cart: IProducto[] = [];
+  customDayShortNames = [
+    'Lunes',
+    'Martes',
+    'Miercoles',
+    'Jueves',
+    'Viernes',
+    'Sabado',
+    'Domingo',
+  ];
 
   constructor(
     private cartService: CartService,
@@ -41,7 +51,20 @@ export class CartModalComponent implements OnInit {
     this.modalCtrl.dismiss();
   }
 
+  private compra: ICompra = {
+    productos: '',
+    cantidad: 0,
+    total: 0,
+    idcomprador: 1,
+    fechaRealizada: Date.now(),
+    fechaSeleccionada: null,
+    hora: null,
+  };
+
   checkout() {
+    // this.cartService.sendOrder(this.compra).subscribe((response) => {
+    //   console.log(response);
+    // });
     Swal.fire({
       icon: 'success',
       title: 'Servicio Agendado',
@@ -49,5 +72,8 @@ export class CartModalComponent implements OnInit {
       timer: 1500,
     }),
       this.cartService.blankCart();
+    this.compra.fechaSeleccionada = null;
+    this.compra.hora = null;
+    this.close();
   }
 }
